@@ -1,0 +1,186 @@
+/* ==== FUENTE GENERAL ==== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #fff;
+    color: #111;
+}
+
+/* ==== NAVBAR ==== */
+.navbar {
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.nav-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-bar {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+
+.icon {
+    font-size: 22px; 
+    color: black;
+    cursor: pointer;
+}
+
+.icon:hover {
+    color: #555;
+}
+
+/* ==== HERO ==== */
+.hero {
+    width: 100%;
+    height: 100vh;
+    background: url('img/hero.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding-left: 60px;
+    color: white;
+}
+
+.hero-text h2 {
+    font-size: 46px;
+    font-weight: 600;
+}
+
+
+/* ==== SECCIÓN DE TÍTULO ==== */
+.section-title {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 22px;
+}
+
+
+/* ==== CARDS ==== */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 230px;
+    padding: 15px;
+    background: #f7f7f7;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.card h3 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.card p {
+    font-size: 14px;
+    margin: 5px 0 15px;
+}
+
+.card button {
+    padding: 8px 18px;
+    border: none;
+    border-radius: 20px;
+    background: #000;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* ==== BANNER ==== */
+.banner {
+    display: flex;
+    height: 350px;  /* altura fija y pareja */
+}
+
+.banner-text {
+    width: 50%;
+    background: #000;
+    color: white;
+    padding: 40px;   /* antes 60px */
+    display: flex;
+    align-items: center; /* centra el texto verticalmente */
+}
+
+.banner-image {
+    width: 50%;
+}
+
+.banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* mantiene proporción sin distorsionar */
+}
+
+/* ==== LINK CATALOGO ==== */
+.catalog-link {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.catalog-link a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    border-bottom: 1px solid black;
+}
+
+
+/* ==== FOOTER ==== */
+.footer {
+    background: #000;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 40px;
+    align-items: center;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    text-align: center;
+}
+
+.social-icons img {
+    width: 24px;
+    margin: 0 8px;
+}
+.footer-right img {
+    width: 25px;
+    margin-left: 12px;
+}
