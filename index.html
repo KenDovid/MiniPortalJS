@@ -1,35 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DRJewelry</title>
     <link rel="stylesheet" href="index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
 
     <!-- NAVBAR -->
+    <!-- _______________________________________________________________________________________ -->
     <header class="navbar">
+
         <h1 class="logo">DRJewelry</h1>
 
+        <!-- BOTÓN HAMBURGUESA -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- LINKS DESKTOP -->
         <nav class="nav-links">
-            <a href="#">Inicio</a>
-            <a href="#">Catálogo</a>
-            <a href="#">Explora</a>
+            <a href="index.html">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="explora.html">Explora</a>
         </nav>
 
+        <!-- ICONO USUARIO -->
         <div class="nav-icons">
-            <input type="text" placeholder="Buscar..." class="search-bar">
             <a href="login.html"><i class="fa-solid fa-user icon"></i></a>
         </div>
     </header>
 
 
+    <!-- ==== SIDEBAR MÓVIL ==== -->
+    <!-- _______________________________________________________________________________________ -->
+    <aside class="sidebar">
+        <div class="close-btn">&times;</div>
+
+        <a href="index.html">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="explora.html">Explora</a>
+        <a href="login.html">Iniciar Sesión</a>
+    </aside>
+
+    <!-- OSCURECEDOR -->
+    <div class="overlay"></div>
+
     <!-- HERO -->
+    <!-- _______________________________________________________________________________________ -->
     <section class="hero">
         <div class="hero-text">
             <h2>EL LUJO QUE<br>DEFINE LA<br>VERDADERA<br>BELLEZA</h2>
@@ -38,43 +62,62 @@
 
 
     <!-- TÍTULO DE SECCIÓN -->
+    <!-- _______________________________________________________________________________________ -->
+
     <h2 class="section-title">NUESTRAS ÚLTIMAS COLECCIONES</h2>
 
     <!-- CARDS -->
+    <!-- _______________________________________________________________________________________ -->
     <section class="cards-container">
 
         <div class="card">
-            <img src="img/reloj.jpg" alt="Relojes">
-            <h3>RELOJES</h3>
-            <p>Elegancia y precisión en cada detalle</p>
+            <div class="card-img">
+                <img src="img/reloj.jpg" alt="Relojes">
+                <div class="card-info">
+                    <h3>RELOJES</h3>
+                    <p>Elegancia y precisión.</p>
+                </div>
+            </div>
             <button>Más Información</button>
         </div>
 
         <div class="card">
-            <img src="img/cadenas.jpg" alt="Cadenas">
-            <h3>CADENAS</h3>
-            <p>Diseños exclusivos para cualquier ocasión</p>
+            <div class="card-img">
+                <img src="img/cadenas.jpg" alt="Cadenas">
+                <div class="card-info">
+                    <h3>CADENAS</h3>
+                    <p>Diseños exclusivos.</p>
+                </div>
+            </div>
             <button>Más Información</button>
         </div>
 
         <div class="card">
-            <img src="img/anillo.jpg" alt="Anillos">
-            <h3>ANILLOS</h3>
-            <p>Estilo y distinción a tu medida</p>
+            <div class="card-img">
+                <img src="img/anillo.jpg" alt="Anillos">
+                <div class="card-info">
+                    <h3>ANILLOS</h3>
+                    <p>Estilo y distinción.</p>
+                </div>
+            </div>
             <button>Más Información</button>
         </div>
 
         <div class="card">
-            <img src="img/pendientes.jpg" alt="Pendientes">
-            <h3>PENDIENTES</h3>
-            <p>Brillo incomparable</p>
+            <div class="card-img">
+                <img src="img/pendientes.jpg" alt="Pendientes">
+                <div class="card-info">
+                    <h3>PENDIENTES</h3>
+                    <p>Brillo incomparable.</p>
+                </div>
+            </div>
             <button>Más Información</button>
         </div>
 
     </section>
 
-
     <!-- BANNER -->
+    <!-- _______________________________________________________________________________________ -->
     <section class="banner">
         <div class="banner-text">
             <h2>DISEÑOS EXCLUSIVOS, SOLO EN<br>
@@ -89,19 +132,20 @@
 
     <!-- SECCIÓN CATALOGO -->
     <div class="catalog-link">
-        <a href="#catalogo">NUESTRO CATÁLOGO PARA MÁS DISEÑOS</a>
+        <a href="catalogo.html">NUESTRO CATÁLOGO PARA MÁS DISEÑOS</a>
     </div>
 
 
     <!-- FOOTER -->
+    <!-- _______________________________________________________________________________________ -->
     <footer class="footer">
         <div class="footer-left">
-            <p>Nuestras redes sociales</p>
             <div class="social-icons">
                 <i class="fa-brands fa-square-facebook icon"></i>
                 <i class="fa-brands fa-square-instagram icon"></i>
                 <i class="fa-brands fa-square-whatsapp icon"></i>
             </div>
+            <p>Nuestras redes sociales</p>
         </div>
 
         <div class="footer-center">
@@ -110,10 +154,19 @@
         </div>
 
         <div class="footer-right">
-            <img src="icons/upload.svg" alt="">
-            <img src="icons/info.svg" alt="">
-        </div>
-    </footer>
+            <div class="item">
+                <i class="fa-solid fa-headset"></i>
+                <span>Soporte</span>
+            </div>
 
+            <div class="item">
+                <i class="fa-solid fa-circle-question"></i>
+                <span>Más información</span>
+            </div>
+        </div>
+
+    </footer>
+    <script src="index.js"></script>
 </body>
+
 </html>

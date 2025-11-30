@@ -1,9 +1,12 @@
 /* ==== FUENTE GENERAL ==== */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@300;400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -14,10 +17,11 @@ body {
 /* ==== NAVBAR ==== */
 .navbar {
     width: 100%;
-    padding: 20px 50px;
+    padding: 20px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .logo {
@@ -25,49 +29,134 @@ body {
     font-size: 1.4rem;
 }
 
+/* LINKS DESKTOP */
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
 .nav-links a {
-    margin: 0 15px;
     text-decoration: none;
     color: black;
     font-weight: 400;
 }
 
+/* ICONOS */
 .nav-icons {
     display: flex;
-    align-items: center;
     gap: 15px;
 }
 
-.search-bar {
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    padding: 5px 15px;
+.icon {
+    font-size: 22px;
+    color: black;
 }
 
-.icon {
-    font-size: 22px; 
-    color: black;
+/* ==== HAMBURGUESA ==== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
     cursor: pointer;
 }
 
-.icon:hover {
-    color: #555;
+.hamburger span {
+    width: 26px;
+    height: 3px;
+    background: black;
+    transition: 0.3s;
+    border-radius: 3px;
 }
+
+/* ==== SIDEBAR ==== */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    /* escondida */
+    width: 260px;
+    height: 100%;
+    background: #111;
+    color: white;
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    transition: 0.4s ease;
+    z-index: 2000;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.sidebar .close-btn {
+    font-size: 30px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    width: fit-content;
+}
+
+/* ==== OVERLAY ==== */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    display: none;
+    z-index: 1500;
+}
+
+/* overlay visible */
+.overlay.active {
+    display: block;
+}
+
+/* sidebar visible */
+.sidebar.active {
+    right: 0;
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 768px) {
+
+    .nav-links,
+    .nav-icons {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
 
 /* ==== HERO ==== */
 .hero {
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     background: url('img/hero.jpg') center/cover no-repeat;
+
     display: flex;
-    align-items: center;
-    padding-left: 60px;
-    color: white;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    padding: 40px 0 0 60px;
+    color: #fff;
+
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .hero-text h2 {
     font-size: 46px;
     font-weight: 600;
+    line-height: 1.1;
+    max-width: 300px;
 }
 
 
@@ -78,62 +167,103 @@ body {
     font-size: 22px;
 }
 
-
 /* ==== CARDS ==== */
 .cards-container {
     display: flex;
     justify-content: center;
-    gap: 25px;
-    margin: 40px 0;
+    gap: 30px;
+    margin: 50px 0;
     flex-wrap: wrap;
 }
 
 .card {
-    width: 230px;
-    padding: 15px;
-    background: #f7f7f7;
-    border-radius: 12px;
-    text-align: center;
+    width: 400px;
+    /* MÁS ANCHA */
+    text-align: left;
 }
 
-.card img {
+.card-img {
+    position: relative;
     width: 100%;
-    border-radius: 12px;
+    height: 320px;
+    /* más alta también, para que se vea premium */
+    border-radius: 14px;
+    overflow: hidden;
 }
 
-.card h3 {
-    margin-top: 10px;
-    font-size: 18px;
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.card p {
-    font-size: 14px;
-    margin: 5px 0 15px;
+/* Sombra elegante */
+.card-img::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 55%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
 }
 
+/* Texto dentro de la imagen */
+.card-info {
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+    right: 18px;
+    /* 👈 esto asegura alineación perfecta */
+    color: white;
+    z-index: 5;
+}
+
+.card-info h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.card-info p {
+    font-size: 15px;
+    margin-top: 4px;
+    line-height: 1.2;
+}
+
+/* Botón */
 .card button {
-    padding: 8px 18px;
+    display: block;
+    margin: 1rem auto 0 auto;
+    text-align: center;
+    margin-top: 14px;
+    padding: 9px 20px;
     border: none;
-    border-radius: 20px;
+    border-radius: 22px;
     background: #000;
     color: white;
     cursor: pointer;
 }
 
 
+
 /* ==== BANNER ==== */
 .banner {
     display: flex;
-    height: 350px;  /* altura fija y pareja */
+    height: 350px;
+    /* altura fija y pareja */
 }
 
 .banner-text {
     width: 50%;
     background: #000;
     color: white;
-    padding: 40px;   /* antes 60px */
+    padding: 40px;
+    /* antes 60px */
     display: flex;
-    align-items: center; /* centra el texto verticalmente */
+    align-items: center;
+    /* centra el texto verticalmente */
 }
 
 .banner-image {
@@ -143,7 +273,8 @@ body {
 .banner-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* mantiene proporción sin distorsionar */
+    object-fit: cover;
+    /* mantiene proporción sin distorsionar */
 }
 
 /* ==== LINK CATALOGO ==== */
@@ -159,28 +290,128 @@ body {
     border-bottom: 1px solid black;
 }
 
+/* ==== RESPONSIVE PARA EL BANNER ==== */
+@media (max-width: 680px) {
+  .banner {
+    flex-direction: column;      /* se apila verticalmente */
+    height: auto;                /* deja que crezca naturalmente */
+  }
+
+  .banner-text, 
+  .banner-image {
+    width: 100%;                 /* ambas partes ocupan el ancho completo */
+    height: auto;
+  }
+
+  .banner-text {
+    padding: 25px;               /* menos padding para pantallas pequeñas */
+    text-align: center;          /* opcional: queda más estético en móvil */
+  }
+
+  .banner-text h2 {
+    font-size: 1.6rem;           /* baja suavemente el tamaño */
+    line-height: 1.3em;
+  }
+
+  .banner-text span {
+    display: block;
+    margin-top: 6px;
+  }
+
+  .banner-image img {
+    height: 250px;               /* altura fija para que no se descontrole */
+    object-fit: cover;
+  }
+}
+
 
 /* ==== FOOTER ==== */
 .footer {
-    background: #000;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    padding: 30px 40px;
-    align-items: center;
+  background: #000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px 50px;
+  flex-wrap: wrap;     /* respira mejor en pantallas pequeñas */
+  gap: 25px;
 }
 
+/* Secciones generales */
 .footer-left,
 .footer-center,
 .footer-right {
-    text-align: center;
+  flex: 1;
+  text-align: center;
 }
 
-.social-icons img {
-    width: 24px;
-    margin: 0 8px;
+/* ==== SOCIAL ICONS (IZQUIERDA) ==== */
+.social-icons i {
+  font-size: 32px;
+  color: white;
+  margin: 0 10px;
+  transition: 0.3s ease;
 }
-.footer-right img {
-    width: 25px;
-    margin-left: 12px;
+
+.social-icons i:hover {
+  color: #bfbfbf;
+}
+
+.footer-left p {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+/* ==== CENTRO ==== */
+.footer-center p {
+  margin: 3px 0;
+  font-size: 14px;
+}
+
+/* ==== LADO DERECHO (COLUMNS) ==== */
+.footer-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;   /* separación entre las dos columnas */
+}
+
+/* Cada icono + texto es una columna */
+.footer-right .item {
+  text-align: center;
+}
+
+/* Íconos */
+.footer-right .item i {
+  font-size: 28px;
+  color: white;
+  margin-bottom: 5px;
+  display: block;
+  transition: 0.3s ease;
+}
+
+.footer-right .item i:hover {
+  color: #bfbfbf;
+}
+
+/* Textos bajo iconos */
+.footer-right .item span {
+  display: block;
+  font-size: 14px;
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-right {
+    gap: 25px;
+  }
+
+  .footer-right .item span {
+    margin: 5px 0;
+  }
 }

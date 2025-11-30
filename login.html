@@ -11,6 +11,50 @@
 
 <body>
 
+    <!-- NAVBAR -->
+    <!-- _______________________________________________________________________________________ -->
+    <header class="navbar">
+
+        <h1 class="logo">DRJewelry</h1>
+
+        <!-- BOTÓN HAMBURGUESA -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- LINKS DESKTOP -->
+        <nav class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="explora.html">Explora</a>
+        </nav>
+
+        <!-- ICONO USUARIO -->
+        <div class="nav-icons">
+            <a href="login.html"><i class="fa-solid fa-user icon"></i></a>
+        </div>
+    </header>
+    
+
+
+    <!-- ==== SIDEBAR MÓVIL ==== -->
+    <!-- _______________________________________________________________________________________ -->
+    <aside class="sidebar">
+        <div class="close-btn">&times;</div>
+
+        <a href="index.html">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="explora.html">Explora</a>
+        <a href="login.html">Iniciar Sesión</a>
+    </aside>
+
+    <!-- OSCURECEDOR -->
+    <div class="overlay"></div>
+
+    <!-- SECCIÓN CUENTA -->
+
     <div class="container" id="container">
         <div class="form-container sign-up">
             <form>
@@ -21,7 +65,6 @@
                     <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
-                <span>usa tu email para registrarte</span>
                 <input type="text" placeholder="Nombre">
                 <input type="email" placeholder="Correo">
                 <input type="password" placeholder="Contraseña">
@@ -37,7 +80,6 @@
                     <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
-                <span>Or use your email password</span>
                 <input type="email" placeholder="Correo">
                 <input type="password" placeholder="Contraseña">
                 <a href="#">¿Olvidaste tu contraseña?</a>
@@ -59,6 +101,37 @@
             </div>
         </div>
     </div>
+    
+    <!-- FOOTER -->
+    <!-- _______________________________________________________________________________________ -->
+    <footer class="footer">
+        <div class="footer-left">
+            <div class="social-icons">
+                <i class="fa-brands fa-square-facebook icon"></i>
+                <i class="fa-brands fa-square-instagram icon"></i>
+                <i class="fa-brands fa-square-whatsapp icon"></i>
+            </div>
+            <p>Nuestras redes sociales</p>
+        </div>
+
+        <div class="footer-center">
+            <p>Desarrollado por Ing. K.David</p>
+            <p>Todos los derechos reservados.</p>
+        </div>
+
+        <div class="footer-right">
+            <div class="item">
+                <i class="fa-solid fa-headset"></i>
+                <span>Soporte</span>
+            </div>
+
+            <div class="item">
+                <i class="fa-solid fa-circle-question"></i>
+                <span>Más información</span>
+            </div>
+        </div>
+
+    </footer>
 
     <script src="login_script.js"></script>
 </body>

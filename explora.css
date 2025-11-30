@@ -1,0 +1,226 @@
+/* ==== FUENTE GENERAL ==== */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: #fff;
+    color: #111;
+}
+
+/* ==== NAVBAR ==== */
+.navbar {
+    width: 100%;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+/* LINKS DESKTOP */
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+}
+
+/* ICONOS */
+.nav-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icon {
+    font-size: 22px;
+    color: black;
+}
+
+/* ==== HAMBURGUESA ==== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 26px;
+    height: 3px;
+    background: black;
+    transition: 0.3s;
+    border-radius: 3px;
+}
+
+/* ==== SIDEBAR ==== */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    /* escondida */
+    width: 260px;
+    height: 100%;
+    background: #111;
+    color: white;
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    transition: 0.4s ease;
+    z-index: 2000;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.sidebar .close-btn {
+    font-size: 30px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    width: fit-content;
+}
+
+/* ==== OVERLAY ==== */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    display: none;
+    z-index: 1500;
+}
+
+/* overlay visible */
+.overlay.active {
+    display: block;
+}
+
+/* sidebar visible */
+.sidebar.active {
+    right: 0;
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 768px) {
+
+    .nav-links,
+    .nav-icons {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* ==== FOOTER ==== */
+.footer {
+  background: #000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px 50px;
+  flex-wrap: wrap;     /* respira mejor en pantallas pequeñas */
+  gap: 25px;
+}
+
+/* Secciones generales */
+.footer-left,
+.footer-center,
+.footer-right {
+  flex: 1;
+  text-align: center;
+}
+
+/* ==== SOCIAL ICONS (IZQUIERDA) ==== */
+.social-icons i {
+  font-size: 32px;
+  color: white;
+  margin: 0 10px;
+  transition: 0.3s ease;
+}
+
+.social-icons i:hover {
+  color: #bfbfbf;
+}
+
+.footer-left p {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+/* ==== CENTRO ==== */
+.footer-center p {
+  margin: 3px 0;
+  font-size: 14px;
+}
+
+/* ==== LADO DERECHO (COLUMNS) ==== */
+.footer-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;   /* separación entre las dos columnas */
+}
+
+/* Cada icono + texto es una columna */
+.footer-right .item {
+  text-align: center;
+}
+
+/* Íconos */
+.footer-right .item i {
+  font-size: 28px;
+  color: white;
+  margin-bottom: 5px;
+  display: block;
+  transition: 0.3s ease;
+}
+
+.footer-right .item i:hover {
+  color: #bfbfbf;
+}
+
+/* Textos bajo iconos */
+.footer-right .item span {
+  display: block;
+  font-size: 14px;
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-right {
+    gap: 25px;
+  }
+
+  .footer-right .item span {
+    margin: 5px 0;
+  }
+}
