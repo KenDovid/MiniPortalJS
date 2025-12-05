@@ -3,138 +3,319 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@300;400;500;600;700&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
-    background: #fff;
-    color: #111;
+  background: #fff;
+  color: #111;
 }
 
 /* ==== NAVBAR ==== */
 .navbar {
-    width: 100%;
-    padding: 20px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
+  width: 100%;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
 
 .logo {
-    font-weight: 600;
-    font-size: 1.4rem;
+  font-weight: 600;
+  font-size: 1.4rem;
 }
 
 /* LINKS DESKTOP */
 .nav-links {
-    display: flex;
-    gap: 25px;
+  display: flex;
+  gap: 25px;
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: black;
-    font-weight: 400;
+  text-decoration: none;
+  color: black;
+  font-weight: 400;
 }
 
 /* ICONOS */
 .nav-icons {
-    display: flex;
-    gap: 15px;
+  display: flex;
+  gap: 15px;
 }
 
 .icon {
-    font-size: 22px;
-    color: black;
+  font-size: 22px;
+  color: black;
 }
 
 /* ==== HAMBURGUESA ==== */
 .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
 }
 
 .hamburger span {
-    width: 26px;
-    height: 3px;
-    background: black;
-    transition: 0.3s;
-    border-radius: 3px;
+  width: 26px;
+  height: 3px;
+  background: black;
+  transition: 0.3s;
+  border-radius: 3px;
 }
 
 /* ==== SIDEBAR ==== */
 .sidebar {
-    position: fixed;
-    top: 0;
-    right: -260px;
-    /* escondida */
-    width: 260px;
-    height: 100%;
-    background: #111;
-    color: white;
-    padding: 40px 25px;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    transition: 0.4s ease;
-    z-index: 2000;
+  position: fixed;
+  top: 0;
+  right: -260px;
+  /* escondida */
+  width: 260px;
+  height: 100%;
+  background: #111;
+  color: white;
+  padding: 40px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  transition: 0.4s ease;
+  z-index: 2000;
 }
 
 .sidebar a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
 }
 
 .sidebar .close-btn {
-    font-size: 30px;
-    cursor: pointer;
-    margin-bottom: 20px;
-    width: fit-content;
+  font-size: 30px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  width: fit-content;
 }
 
 /* ==== OVERLAY ==== */
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.55);
-    display: none;
-    z-index: 1500;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  display: none;
+  z-index: 1500;
 }
 
 /* overlay visible */
 .overlay.active {
-    display: block;
+  display: block;
 }
 
 /* sidebar visible */
 .sidebar.active {
-    right: 0;
+  right: 0;
 }
 
 /* ==== RESPONSIVE ==== */
 @media (max-width: 768px) {
 
-    .nav-links,
-    .nav-icons {
-        display: none;
-    }
+  .nav-links,
+  .nav-icons {
+    display: none;
+  }
 
-    .hamburger {
-        display: flex;
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* CONTENIDO HERO Y FORMULARIO */
+/* ___________________________________________________ */
+
+/* Título y Párrafo fuera del hero */
+.intro-outside {
+  padding: 30px 50px 0;
+  /* max-width: 1200px; */
+  margin: 0 auto;
+}
+
+.intro-outside h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.intro-outside p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Sección HERO */
+.hero {
+  position: relative;
+  /* max-width: 1200px; <-- (Eliminada para 100% de ancho) */
+  margin: 0 auto 50px;
+  
+    /* 🛠️ AÑADIDO: Control de altura del contenedor principal */
+  height: 70vh; /* Define una altura fija razonable para pantallas grandes */
+  overflow: hidden; /* Oculta cualquier parte de la imagen que se salga */
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%; /* La imagen ocupa el 100% de la altura de .hero */
+  display: block;
+  
+    /* 🛠️ AÑADIDO: Asegura que la imagen cubra el contenedor sin deformarse */
+  object-fit: cover; 
+  border-radius: 20px;
+}
+
+/* Contenedor del Formulario */
+.form-container {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  z-index: 10;
+  max-width: 350px;
+}
+
+/* Estilos de la Tarjeta (Card) */
+.contact-form {
+  background: #ffffff; /* Blanco puro, sin transparencia */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.contact-form h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #000;
+}
+
+.form-subheading {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.field {
+  display: block;
+  margin-bottom: 15px;
+}
+
+/* Estilos de Inputs, Textarea y Select */
+.field input,
+.field textarea,
+.field select { /* AÑADIDO SELECT */
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #000; /* Borde negro */
+  border-radius: 10px;    /* Bordes redondeados */
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus { /* AÑADIDO SELECT */
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+/* Placeholder oscuro para el select (si es necesario) */
+.field select:required:invalid {
+ color: #999;
+}
+.field option[disabled] {
+ display: none;
+}
+
+/* Botón de envío */
+.btn-submit {
+  width: 100%;
+  background: #000;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
+  margin-top: 10px;
+}
+
+.btn-submit:hover {
+  background: #333;
+  transform: scale(1.02);
+}
+
+/* Mensajes de error */
+.error {
+  display: block;
+  color: #d93025;
+  font-size: 0.8rem;
+  margin-top: 4px;
+  padding-left: 5px;
+  min-height: 1.2em;
+}
+
+/* Inputs inválidos */
+.field input.invalid,
+.field textarea.invalid,
+.field select.invalid { /* AÑADIDO SELECT */
+  border-color: #d93025;
+  border-width: 1.5px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .form-container {
+    right: 20px;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-outside {
+    padding: 20px 20px 0;
+    text-align: center;
+  }
+
+  .hero {
+    margin-top: 20px;
+  }
+
+  .hero-img {
+    display: none;
+  }
+
+  .form-container {
+    position: static;
+    transform: none;
+    max-width: 100%;
+    padding: 0 20px;
+  }
+    
+    .contact-form {
+        box-shadow: none; 
+        padding: 0;
     }
 }
 
 /* ==== FOOTER ==== */
+/* ___________________________________________________ */
 .footer {
   background: #000;
   color: white;
@@ -142,7 +323,8 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 35px 50px;
-  flex-wrap: wrap;     /* respira mejor en pantallas pequeñas */
+  flex-wrap: wrap;
+  /* respira mejor en pantallas pequeñas */
   gap: 25px;
 }
 
@@ -182,7 +364,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;   /* separación entre las dos columnas */
+  gap: 40px;
+  /* separación entre las dos columnas */
 }
 
 /* Cada icono + texto es una columna */

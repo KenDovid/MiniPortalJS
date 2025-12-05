@@ -2,10 +2,10 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explora</title>
-    <link rel="stylesheet" href="index.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Explorar · DRJewelry</title>
+    <link rel="stylesheet" href="explora.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -52,6 +52,62 @@
     <!-- OSCURECEDOR -->
     <div class="overlay"></div>
 
+    <!-- HERO + FORM -->
+
+    <main>
+    <div class="intro intro-outside">
+   <h1>CONTÁCTANOS</h1>
+   <p>Completa el formulario y te contestaremos en menos de 24 horas</p>
+  </div>
+
+  <section class="hero">
+   <img class="hero-img" src="img/formReloj.jpg" alt="Reloj elegante sobre fondo oscuro" />
+
+      <div class="form-container">
+    <form id="contactForm" class="contact-form" novalidate>
+     <h2>¿Tienes alguna duda?</h2>
+     <p class="form-subheading">Envíanos tu información y te atenderemos.</p>
+
+     <label class="field">
+      <input type="text" name="name" id="name" placeholder="Nombre completo" required minlength="2" />
+      <small class="error" id="err-name"></small>
+     </label>
+
+     <label class="field">
+      <input type="email" name="email" id="email" placeholder="Correo electrónico" required />
+      <small class="error" id="err-email"></small>
+     </label>
+
+          <label class="field">
+      <input type="tel" name="phone" id="phone" placeholder="Número de teléfono" />
+      <small class="error" id="err-phone"></small>
+     </label>
+
+          <label class="field">
+      <select name="subject" id="subject" required>
+       <option value="" disabled selected hidden>Elige tu consulta *</option>
+       <option value="Consulta">Consulta General</option>
+       <option value="Pedido">Pregunta sobre un Pedido</option>
+       <option value="Soporte">Soporte Técnico</option>
+      </select>
+      <small class="error" id="err-subject"></small>
+     </label>
+
+     <label class="field">
+      <textarea name="message" id="message" rows="4" placeholder="Mensaje *" required minlength="10"></textarea>
+      <small class="error" id="err-message"></small>
+     </label>
+
+     <div class="form-actions">
+      <button type="submit" id="submitBtn" class="btn-submit">Enviar</button>
+      <div id="formSuccess" class="form-success" role="status" aria-live="polite"></div>
+     </div>
+    </form>
+   </div>
+  </section>
+ </main>
+
+
     <!-- FOOTER -->
     <!-- _______________________________________________________________________________________ -->
     <footer class="footer">
@@ -82,7 +138,8 @@
         </div>
 
     </footer>
-    <script src="index.js"></script>
+
+    <script src="explora.js"></script>
 </body>
 
 </html>

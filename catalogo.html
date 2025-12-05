@@ -2,87 +2,225 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo</title>
+  <link rel="stylesheet" href="catalogo.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-    <!-- _______________________________________________________________________________________ -->
-    <header class="navbar">
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <h1 class="logo">DRJewelry</h1>
 
-        <h1 class="logo">DRJewelry</h1>
+    <!-- BOTÓN HAMBURGUESA -->
+    <div class="hamburger" role="button" aria-label="Abrir menú" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-        <!-- BOTÓN HAMBURGUESA -->
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+    <!-- LINKS DESKTOP -->
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a href="catalogo.html">Catálogo</a>
+      <a href="explora.html">Explora</a>
+    </nav>
+
+    <!-- ICONO USUARIO -->
+    <div class="nav-icons">
+      <a href="login.html"><i class="fa-solid fa-user icon" aria-hidden="true"></i></a>
+    </div>
+  </header>
+
+  <!-- SIDEBAR MÓVIL -->
+  <aside class="sidebar" aria-hidden="true">
+    <nav>
+      <div class="close-btn" role="button" aria-label="Cerrar menú" tabindex="0">&times;</div>
+
+      <a href="index.html">Inicio</a>
+      <a href="catalogo.html">Catálogo</a>
+      <a href="explora.html">Explora</a>
+      <a href="login.html">Iniciar Sesión</a>
+    </nav>
+  </aside>
+
+  <!-- OSCURECEDOR -->
+  <div class="overlay" aria-hidden="true"></div>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- RELOJES -->
+    <section class="categoria">
+      <h2>RELOJES</h2>
+      <div class="cards-container">
+
+        <div class="card" data-product="reloj1">
+          <img src="img/reloj.jpg" alt="Reloj ilustrativo" />
+          <h3>RELOJ</h3>
+          <p>Artículo ilustrativo</p>
+          <button class="btn-info">Más información</button>
         </div>
 
-        <!-- LINKS DESKTOP -->
-        <nav class="nav-links">
-            <a href="index.html">Inicio</a>
-            <a href="catalogo.html">Catálogo</a>
-            <a href="explora.html">Explora</a>
-        </nav>
-
-        <!-- ICONO USUARIO -->
-        <div class="nav-icons">
-            <a href="login.html"><i class="fa-solid fa-user icon"></i></a>
-        </div>
-    </header>
-
-
-    <!-- ==== SIDEBAR MÓVIL ==== -->
-    <!-- _______________________________________________________________________________________ -->
-    <aside class="sidebar">
-        <div class="close-btn">&times;</div>
-
-        <a href="index.html">Inicio</a>
-        <a href="catalogo.html">Catálogo</a>
-        <a href="explora.html">Explora</a>
-        <a href="login.html">Iniciar Sesión</a>
-    </aside>
-
-    <!-- OSCURECEDOR -->
-    <div class="overlay"></div>
-
-    <!-- FOOTER -->
-    <!-- _______________________________________________________________________________________ -->
-    <footer class="footer">
-        <div class="footer-left">
-            <div class="social-icons">
-                <i class="fa-brands fa-square-facebook icon"></i>
-                <i class="fa-brands fa-square-instagram icon"></i>
-                <i class="fa-brands fa-square-whatsapp icon"></i>
-            </div>
-            <p>Nuestras redes sociales</p>
+        <div class="card" data-product="reloj2">
+          <img src="img/reloj.jpg" alt="Reloj ilustrativo" />
+          <h3>RELOJ</h3>
+          <p>Artículo ilustrativo</p>
+          <button class="btn-info">Más información</button>
         </div>
 
-        <div class="footer-center">
-            <p>Desarrollado por Ing. K.David</p>
-            <p>Todos los derechos reservados.</p>
+        <div class="card" data-product="reloj3">
+          <img src="img/reloj.jpg" alt="Reloj ilustrativo" />
+          <h3>RELOJ</h3>
+          <p>Artículo ilustrativo</p>
+          <button class="btn-info">Más información</button>
         </div>
 
-        <div class="footer-right">
-            <div class="item">
-                <i class="fa-solid fa-headset"></i>
-                <span>Soporte</span>
-            </div>
-
-            <div class="item">
-                <i class="fa-solid fa-circle-question"></i>
-                <span>Más información</span>
-            </div>
+        <div class="card" data-product="reloj4">
+          <img src="img/reloj.jpg" alt="Reloj ilustrativo" />
+          <h3>RELOJ</h3>
+          <p>Artículo ilustrativo</p>
+          <button class="btn-info">Más información</button>
         </div>
 
-    </footer>
-    <script src="index.js"></script>
+      </div>
+    </section>
+
+    <!-- CADENAS -->
+    <section class="categoria">
+      <h2>CADENAS</h2>
+      <div class="cards-container">
+
+        <div class="card" data-product="cadena1">
+          <img src="img/cadenas.jpg" alt="Cadena ilustrativa" />
+          <h3>CADENA</h3>
+          <p>Artículo ilustrativo</p>
+          <button class="btn-info">Más información</button>
+        </div>
+
+        <div class="card" data-product="cadena2">
+          <img src="img/cadenas.jpg" alt="Cadena ilustrativa" />
+          <h3>CADENA</h3>
+          <p>Artículo ilustrativo</p>
+          <button class="btn-info">Más información</button>
+        </div>
+
+        <div class="card" data-product="cadena3">
+          <img src="img/cadenas.jpg" alt="Cadena ilustrativa" />
+          <h3>CADENA</h3>
+          <p>Artículo ilustrativo</p>
+          <button class="btn-info">Más información</button>
+        </div>
+
+        <div class="card" data-product="cadena4">
+          <img src="img/cadenas.jpg" alt="Cadena ilustrativa" />
+          <h3>CADENA</h3>
+          <p>Artículo ilustrativo</p>
+          <button class="btn-info">Más información</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ANILLOS Y PENDIENTES -->
+    <section class="categoria">
+      <h2>ANILLOS Y PENDIENTES</h2>
+      <div class="cards-container">
+
+        <div class="card" data-product="anillo1">
+          <img src="img/anillo.jpg" alt="Anillo ilustrativo" />
+          <h3>ANILLO</h3>
+          <p>Artículo ilustrativo</p>
+          <button class="btn-info">Más información</button>
+        </div>
+
+        <div class="card" data-product="anillo2">
+          <img src="img/anillo.jpg" alt="Anillo ilustrativo" />
+          <h3>ANILLO</h3>
+          <p>Artículo ilustrativo</p>
+          <button class="btn-info">Más información</button>
+        </div>
+
+        <div class="card" data-product="pendiente1">
+          <img src="img/pendientes.jpg" alt="Pendiente ilustrativo" />
+          <h3>PENDIENTES</h3>
+          <p>Artículo ilustrativo</p>
+          <button class="btn-info">Más información</button>
+        </div>
+
+        <div class="card" data-product="pendiente2">
+          <img src="img/pendientes.jpg" alt="Pendiente ilustrativo" />
+          <h3>PENDIENTES</h3>
+          <p>Artículo ilustrativo</p>
+          <button class="btn-info">Más información</button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL PRODUCTO -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+
+      <!-- Columna izquierda -->
+      <div class="modal-info">
+        <h2 id="modal-title">Título</h2>
+
+        <ul class="modal-details">
+          <li><strong>Peso:</strong> <span id="modal-peso">N/A</span></li>
+          <li><strong>Material:</strong> <span id="modal-material">N/A</span></li>
+          <li><strong>Garantía:</strong> <span id="modal-garantia">N/A</span></li>
+        </ul>
+
+        <p id="modal-desc"></p>
+      </div>
+
+      <!-- Columna derecha -->
+      <div class="modal-image-box">
+        <img id="modal-img" src="" alt="Imagen del producto" />
+        <button class="btn-buy" type="button">Comprar</button>
+      </div>
+
+      <button id="modal-close" class="close" aria-label="Cerrar modal">&times;</button>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-left">
+      <div class="social-icons" aria-hidden="true">
+        <i class="fa-brands fa-square-facebook icon"></i>
+        <i class="fa-brands fa-square-instagram icon"></i>
+        <i class="fa-brands fa-square-whatsapp icon"></i>
+      </div>
+      <p>Nuestras redes sociales</p>
+    </div>
+
+    <div class="footer-center">
+      <p>Desarrollado por Ing. K.David</p>
+      <p>Todos los derechos reservados.</p>
+    </div>
+
+    <div class="footer-right">
+      <div class="item">
+        <i class="fa-solid fa-headset" aria-hidden="true"></i>
+        <span>Soporte</span>
+      </div>
+
+      <div class="item">
+        <i class="fa-solid fa-circle-question" aria-hidden="true"></i>
+        <span>Más información</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="catalogo.js"></script>
 </body>
 
 </html>
